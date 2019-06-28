@@ -5,7 +5,7 @@ body {
 .flexible {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
 }
 
 /* HARD CODED DARK_MODE  */
@@ -51,10 +51,10 @@ body {
 }
 
 .dark .video-item .content .header {
-    color:#bdbdbd;
+    color: #bdbdbd;
 }
 
-.dark .ui.divided.list>.item {
+.dark .ui.divided.list > .item {
     border-color: #6d6d6d;
 }
 
@@ -68,4 +68,13 @@ input:-webkit-autofill {
 
 .dark .ui.grid {
     background-color: #212121;
+}
+
+@media (min-width: 991px) {
+    .ui.relaxed.divided.list {
+        max-height: 544px;
+        overflow: hidden;
+        overflow-y: scroll;
+        box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    }
 }
