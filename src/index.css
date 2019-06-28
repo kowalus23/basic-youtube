@@ -1,0 +1,71 @@
+body {
+    background-color: #fff;
+}
+
+.flexible {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+/* HARD CODED DARK_MODE  */
+.dark-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c9c4c4;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+    border-radius: 50%;
+}
+
+.dark-mode:hover {
+    border-color: #6b6666;
+}
+
+.dark {
+    background-color: #212121;
+}
+
+.dark .dark-mode {
+    border-color: #ffffff;
+}
+
+.dark .dark-mode:hover {
+    border-color: #1f1f1f;
+}
+
+.dark .ui.form .field input {
+    background-color: #888888;
+}
+
+.dark .ui.header {
+    color: white;
+}
+
+.dark .ui.segment {
+    background-color: #424242;
+    color: #bdbdbd;
+}
+
+.dark .video-item .content .header {
+    color:#bdbdbd;
+}
+
+.dark .ui.divided.list>.item {
+    border-color: #6d6d6d;
+}
+
+input:-webkit-autofill {
+    background-color: red !important;
+}
+
+.column.mb {
+    margin-bottom: 10px !important;
+}
+
+.dark .ui.grid {
+    background-color: #212121;
+}

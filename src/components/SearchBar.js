@@ -24,10 +24,14 @@ class SearchBar extends React.Component {
       <div className={'search-bar ui segment'}>
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
-            <label htmlFor="search">Video Search</label>
+            <div className="flexible">
+              <label htmlFor="search">Search a video on YouTube!</label>
+              <span onClick={this.props.onClickDarkMode} className={'dark-mode'}> </span>
+            </div>
             <input
               type="text"
               name="search"
+              placeholder="write anything you want..."
               value={this.state.inputText}
               onChange={this.onInputChange}
             />

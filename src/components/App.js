@@ -10,7 +10,12 @@ class App extends React.Component {
     this.state = {
       videos: [],
       selectedVideo: null,
+      toggleClass: false,
     }
+  }
+
+  componentDidMount() {
+    this.onInputSubmit('javascript')
   }
 
   onInputSubmit = async (inputText) => {
@@ -20,7 +25,10 @@ class App extends React.Component {
       }
     });
 
-    this.setState({videos: response.data.items})
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    })
   };
 
   onVideoSelect = (video) => {
@@ -29,12 +37,29 @@ class App extends React.Component {
     })
   };
 
+  onClickDarkMode = () => {
+    const currentState = this.state.toggleClass;
+    this.setState({
+      toggleClass: !currentState
+    })
+  };
+
   render() {
     return (
-      <div className={'ui container'} style={{height: '100vh', paddingTop: '20px'}}>
-        <SearchBar onFormSubmit={this.onInputSubmit}/>
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos}/>
+      <div className={this.state.toggleClass ? 'dark' : ''}>
+        <div className={'ui container'} style={{height: '100vh', paddingTop: '20px'}}>
+          <SearchBar onClickDarkMode={this.onClickDarkMode} onFormSubmit={this.onInputSubmit}/>
+          <div className="ui grid">
+            <div className="ui row">
+              <div className="sixteen wide mobile eleven wide computer column mb">
+                <VideoDetail video={this.state.selectedVideo}/>
+              </div>
+              <div className="sixteen wide mobile five wide computer column">
+                <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos}/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
