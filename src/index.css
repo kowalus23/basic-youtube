@@ -72,9 +72,18 @@ input:-webkit-autofill {
 
 @media (min-width: 991px) {
     .ui.relaxed.divided.list {
-        max-height: 544px;
+        max-height: 556px;
         overflow: hidden;
         overflow-y: scroll;
         box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     }
 }
+
+/* EXTRA css*/
+.video-wrapper {
+    padding: 14px;
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    border-radius: .28571429rem;
+}
+
