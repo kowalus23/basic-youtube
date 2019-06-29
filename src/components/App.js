@@ -20,10 +20,13 @@ class App extends React.Component {
 
   onInputSubmit = async (inputText) => {
     const response = await youtube.get('/search', {
-      params: {
-        q: inputText
-      }
-    });
+        params: {
+          q: inputText
+        }
+      })
+        .catch(console.log('You need to add your own YT API KEY in youtube.js'))
+
+    ;
 
     this.setState({
       videos: response.data.items,
