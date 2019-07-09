@@ -13,12 +13,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #c9c4c4;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #878282;
     cursor: pointer;
     transition: all ease-in-out 200ms;
     border-radius: 50%;
+
+    animation: dark-mode-button 800ms ease-in-out infinite alternate;
+    -webkit-animation: dark-mode-button 800ms ease-in-out infinite alternate;
+}
+
+@keyframes dark-mode-button {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    100% {
+        transform: scale(1.4);
+        -webkit-transform: scale(1.2);
+    }
 }
 
 .dark-mode:hover {

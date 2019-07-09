@@ -26,7 +26,10 @@ class SearchBar extends React.Component {
           <div className="field">
             <div className="flexible">
               <label htmlFor="search">Search a video on YouTube!</label>
-              <span onClick={this.props.onClickDarkMode} className={'dark-mode'}> </span>
+              <div style={{display: 'flex'}}>
+                <p style={{margin: 0, paddingRight: '8px'}}>{this.props.darkMode}</p>
+                <span onClick={this.props.onClickDarkMode} className={'dark-mode'}> </span>
+              </div>
             </div>
             <input
               type="text"

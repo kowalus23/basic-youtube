@@ -11,6 +11,7 @@ class App extends React.Component {
       videos: [],
       selectedVideo: null,
       toggleClass: false,
+      darkMode: true,
     }
   }
 
@@ -42,8 +43,10 @@ class App extends React.Component {
 
   onClickDarkMode = () => {
     const currentState = this.state.toggleClass;
+    const currentMode = this.state.darkMode;
     this.setState({
-      toggleClass: !currentState
+      toggleClass: !currentState,
+      darkMode: !currentMode,
     })
   };
 
@@ -51,7 +54,7 @@ class App extends React.Component {
     return (
       <div className={this.state.toggleClass ? 'dark' : ''}>
         <div className={'ui container'} style={{height: '100vh', paddingTop: '20px'}}>
-          <SearchBar onClickDarkMode={this.onClickDarkMode} onFormSubmit={this.onInputSubmit}/>
+          <SearchBar darkMode={this.state.darkMode ? 'Dark Mode' : 'Light Mode'} onClickDarkMode={this.onClickDarkMode} onFormSubmit={this.onInputSubmit}/>
           <div className="ui grid">
             <div className="ui row">
               <div className="sixteen wide mobile eleven wide computer column mb">
