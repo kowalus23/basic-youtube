@@ -25,7 +25,7 @@ class App extends React.Component {
           q: inputText
         }
       })
-        .catch(console.log('You need to add your own YT API KEY in youtube.js'))
+        .catch(err => console.log(err))
 
     ;
 
