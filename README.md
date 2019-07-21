@@ -1,3 +1,5 @@
+LIVE VIEW - https://kowalus23.github.io/basic-youtube/
+
 This is simple project based on YT API, searcher for first top results on movies from YT, now i set it to 10, but in the future i can add more like 20-25 + pagination
 
 ## Available Scripts
